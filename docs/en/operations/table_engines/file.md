@@ -1,6 +1,7 @@
-# File(InputFormat) {#table_engines-file}
+# File {#table_engines-file}
 
-The data source is a file that stores data in one of the supported input formats (TabSeparated, Native, etc.).
+The File table engine keeps the data in a file in one of the supported [file
+formats](../../interfaces/formats.md#formats) (TabSeparated, Native, etc.).
 
 Usage examples:
 
@@ -14,7 +15,10 @@ Usage examples:
 File(Format)
 ```
 
-`Format` should be supported for either `INSERT` and `SELECT`. For the full list of supported formats see [Formats](../../interfaces/formats.md#formats).
+The `Format` parameter specifies one of the available file formats. If the
+format supports input, `SELECT` queries can be performed, and if it supports
+output -- `INSERT` queries. The formats and their capabilities are listed in
+the [Formats](../../interfaces/formats.md#formats) section.
 
 ClickHouse does not allow to specify filesystem path for`File`. It will use folder defined by [path](../server_settings/settings.md) setting in server configuration.
 

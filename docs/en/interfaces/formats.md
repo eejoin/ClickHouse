@@ -1,10 +1,13 @@
 # Formats for input and output data {#formats}
 
-ClickHouse can accept (`INSERT`) and return (`SELECT`) data in various formats.
+ClickHouse can input and output data in various formats. To output the results
+of a `SELECT` query, or to perform `INSERT`s into a table that uses the
+[File](../operations/table_engines/file.md) engine, the format must be capable
+of output. Conversely, to supply input to an `INSERT` query, or to `SELECT`
+from a file-backed table, the format must be capable of input. The table below
+lists the supported formats and their capabilities.
 
-The table below lists supported formats and how they can be used in `INSERT` and `SELECT` queries.
-
-| Format | INSERT | SELECT |
+| Format | input | output |
 | ------- | -------- | -------- |
 | [TabSeparated](#tabseparated) | ✔ | ✔ |
 | [TabSeparatedRaw](#tabseparatedraw) | ✗ | ✔ |
